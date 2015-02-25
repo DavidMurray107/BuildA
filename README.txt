@@ -1,0 +1,1 @@
+To Load a list open either the DudeArchive.txt or DudeArchive2.txt;

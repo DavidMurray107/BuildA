@@ -1,0 +1,125 @@
+﻿<Window x:Class="BuildA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BuildA"
+        Title="Build-A-Dude!" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="b2v" />
+        <local:IntegerToSourceConverter x:Key="i2s"/>
+
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Menu IsMainMenu="True">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" Click="MenuItem_Click_Open"/>
+                    <MenuItem Header="Save" Click="MenuItem_Click"/>
+            
+         
+                </MenuItem>
+            </Menu>
+
+        </StackPanel>
+        <DockPanel LastChildFill="True" DockPanel.Dock="Left"  VerticalAlignment="Stretch" Height="auto">
+
+            
+            <Button Name="btnRemove" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Click="btnRemove_Click">Remove</Button>
+            <Button Name="btnAdd" VerticalAlignment="Bottom" Click="btnAdd_Click" DockPanel.Dock="Bottom">Add</Button>
+            <ListBox Name="BuildAList" SelectionChanged="BuildAList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding Path=Item.ID}"
+                            IsChecked="{Binding IsChecked,Mode=TwoWay}" Click="CheckBox_Click" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+        <Grid Name="ControlGrid" DockPanel.Dock="Right">
+            <TabControl >
+                <TabItem Header="Shirts">
+                    <StackPanel>
+                        <RadioButton Name="rbBlackShirt" Content="Black Shirt" Checked="ShirtCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbRedShirt" Content="Red Shirt"  Checked="ShirtCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbBlueShirt" Content="Blue Shirt"  Checked="ShirtCheckBoxes_CheckedChanged"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Eyes">
+                    <StackPanel>
+                        <RadioButton Name="rbCrazyEyes" Content="Crazy Eyes" Checked="EyeCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbCrazierEyes" Content="Crazier Eyes" Checked="EyeCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbCraziestEyes" Content="Craziest Eyes" Checked="EyeCheckBoxes_CheckedChanged"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Mouth">
+                    <StackPanel>
+                        <RadioButton Name="rbMouth1" Content="Mouth 1" Checked="MouthCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbMouth2" Content="Mouth 2" Checked="MouthCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbMouth3" Content="Mouth 3" Checked="MouthCheckBoxes_CheckedChanged"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Star">
+                    <StackPanel>
+                        <RadioButton Name="rbStar1" Content="Star 1" Checked="StarCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbStar2" Content="Star 2" Checked="StarCheckBoxes_CheckedChanged"/>
+                        <RadioButton Name="rbStar3" Content="Star 3" Checked="StarCheckBoxes_CheckedChanged"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Eyebrow">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="160*"/>
+                            <RowDefinition Height="166*"/>
+                            <RowDefinition Height="62*"/>
+                            <RowDefinition Height="129*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <!--<RadioButton Name="rbEyebrow1" Content="Eyebrow 1"/>
+                        <RadioButton Name="rbEyebrow2" Content="Eyebrow 2"/>
+                        <RadioButton Name="rbEyebrow3" Content="Eyebrow 3"/>-->
+                        <Slider Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Right" Orientation="Vertical" Name="SlEyebrow" Minimum="0" Maximum="3" 
+                                TickFrequency="1" TickPlacement="Both" IsSnapToTickEnabled="True" Width="30" ValueChanged="SlEyebrow_ValueChanged"></Slider>
+                        <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="74">Eyebrow 3</Label>
+                        <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="65">Eyebrow 2</Label>
+                        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="65">Eyebrow 1</Label>
+                        <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="80">No Eyebrow</Label>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <Image Source="./Images/Dude.png" Height="600" Width="700" />
+            <Image Visibility="{Binding IsChecked,ElementName=rbBlackShirt,Converter={StaticResource b2v}}" Source="./Images/BlackShirt.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbBlueShirt,Converter={StaticResource b2v}}" Source="./Images/BlueShirt.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbRedShirt,Converter={StaticResource b2v}}" Source="./Images/RedShirt.png" Height="600" Width="700"/>
+
+            <Image Visibility="{Binding IsChecked,ElementName=rbCrazyEyes,Converter={StaticResource b2v}}" Source="./Images/CrazyEyes.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbCrazierEyes,Converter={StaticResource b2v}}" Source="./Images/CrazierEyes.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbCraziestEyes,Converter={StaticResource b2v}}" Source="./Images/CraziestEyes.png" Height="600" Width="700"/>
+
+            <!--<Image Visibility="{Binding IsChecked,ElementName=rbEyebrow1,Converter={StaticResource b2v}}" Source="./Images/Eyebrow1.png" Height="600" Width="1052"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbEyebrow2,Converter={StaticResource b2v}}" Source="./Images/Eyebrow2.png" Height="600" Width="1052"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbEyebrow3,Converter={StaticResource b2v}}" Source="./Images/Eyebrow3.png" Height="600" Width="1052"/>-->
+
+            <!--<Image Source="{MultiBinding UpdateSourceTrigger=PropertyChanged, Converter={StaticResource i2s}} "/>
+            <Image.Source>-->
+
+            <!--</Image.Source>-->
+            <Image Source="{Binding Value,ElementName=SlEyebrow, Converter={StaticResource i2s}}"/>
+            <!--{Binding ElementName=SlEyebrow,Converter={StaticResource i2s}}-->
+            <Image Visibility="{Binding IsChecked,ElementName=rbMouth1,Converter={StaticResource b2v}}" Source="./Images/Mouth1.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbMouth2,Converter={StaticResource b2v}}" Source="./Images/Mouth2.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbMouth3,Converter={StaticResource b2v}}" Source="./Images/Mouth3.png" Height="600" Width="700"/>
+
+
+
+            <Image Visibility="{Binding IsChecked,ElementName=rbStar1,Converter={StaticResource b2v}}" Source="./Images/Star1.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbStar2,Converter={StaticResource b2v}}" Source="./Images/Star2.png" Height="600" Width="700"/>
+            <Image Visibility="{Binding IsChecked,ElementName=rbStar3,Converter={StaticResource b2v}}" Source="./Images/Star3.png" Height="600" Width="700"/>
+
+        </Grid>
+    </DockPanel>
+</Window>
