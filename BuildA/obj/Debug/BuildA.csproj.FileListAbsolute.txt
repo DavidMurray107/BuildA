@@ -43,3 +43,20 @@ D:\OneDrive\School\Gui 2\GUI\Project 2\BuildA\BuildA\obj\Debug\BuildA.Properties
 D:\OneDrive\School\Gui 2\GUI\Project 2\BuildA\BuildA\obj\Debug\BuildA.csproj.GenerateResource.Cache
 D:\OneDrive\School\Gui 2\GUI\Project 2\BuildA\BuildA\bin\Debug\Newtonsoft.Json.dll
 D:\OneDrive\School\Gui 2\GUI\Project 2\BuildA\BuildA\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\bin\Debug\BuildA.exe.config
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.exe
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.pdb
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\bin\Debug\BuildA.exe
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\bin\Debug\BuildA.pdb
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\bin\Debug\Newtonsoft.Json.dll
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.csprojResolveAssemblyReference.cache
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\MainWindow.g.cs
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\App.g.cs
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA_MarkupCompile.cache
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA_MarkupCompile.lref
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\MainWindow.baml
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.g.resources
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.Properties.Resources.resources
+D:\OneDrive\School\Gui 2\GUI\BuildADude\BuildA\BuildA\obj\Debug\BuildA.csproj.GenerateResource.Cache

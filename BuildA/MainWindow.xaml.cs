@@ -71,11 +71,9 @@ namespace BuildA
            // dudeList.Add
 
 
-
-       //     dudeList.Add(new CheckedListItem<Dude>(new Dude(1, 2, 0, 3, 1)));
-        //    dudeList.Add(new CheckedListItem<Dude>(new Dude(1, 2, 3, 3, 1)));
+          
             BuildAList.ItemsSource = dudeList;
-
+          
             DataContext = this;
         }
 
@@ -92,7 +90,8 @@ namespace BuildA
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            dudeList.RemoveAt(BuildAList.SelectedIndex);
+            if (BuildAList.SelectedIndex != -1) 
+                dudeList.RemoveAt(BuildAList.SelectedIndex);
         }
 
         private void ShirtCheckBoxes_CheckedChanged(Object sender, EventArgs e)

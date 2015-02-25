@@ -56,10 +56,10 @@ namespace BuildA
         public string ID { get; set; }
         public Dude(int s, int e, int m, int st, int ey) { Shirt = s; Eyes = e; Mouth = m; Star = st; Eyebrow = ey; ID = this.ToString(); }
 
-       public override string ToString()
-       {
-           string retString = Shirt + " " + Eyes + " " + Mouth + " " + Star + " " + Eyebrow;
-           return retString;
-       }
+        public override string ToString()
+        {
+            string retString = Shirt + " " + Eyes + " " + Mouth + " " + Star + " " + Eyebrow;
+            return retString;
+        }
     }
 }
